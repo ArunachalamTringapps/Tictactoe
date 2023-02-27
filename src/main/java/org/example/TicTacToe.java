@@ -99,6 +99,7 @@ public class TicTacToe
         char mark;
         char mark1;
         int t=0;
+        int count=0;
         tic.printboard();
         Tictactae.l.println("Enter Player1");
         String name=scan.nextLine();
@@ -125,11 +126,12 @@ public class TicTacToe
             if(Tictactae.checkRow() || Tictactae.checkcol() || Tictactae.checkDiag() )
             {
                 Tictactae.l.println(cp.name +"Win");
-                t++;
+                count++;
                 break;
             }
             else
             {
+                t++;
                 if(cp==player1)
                 {
                     cp=player2;
@@ -140,7 +142,7 @@ public class TicTacToe
                 }
             }
         }
-        if(t==0) {
+        if(count==0) {
             Tictactae.l.println(cp.name +"Die");
         }
     }
